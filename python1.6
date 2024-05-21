@@ -1,0 +1,20 @@
+Write a program to check whether the given three sides of a triangle are valid or not.
+
+def is_valid_triangle(side1, side2, side3):
+    
+    if side1 <= 0 or side2 <= 0 or side3 <= 0:
+        return False
+    
+    if side1 + side2 <= side3 or side1 + side3 <= side2 or side2 + side3 <= side1:
+        return False
+
+    return True
+
+side1 = float(input("Enter the length of side 1: "))
+side2 = float(input("Enter the length of side 2: "))
+side3 = float(input("Enter the length of side 3: "))
+
+if is_valid_triangle(side1, side2, side3):
+    print("The given sides form a valid triangle.")
+else:
+    print("The given sides do not form a valid triangle.")
