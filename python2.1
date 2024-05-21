@@ -1,0 +1,18 @@
+Write a program to check whether the given number is a perfect square or not.
+
+import math
+
+def is_perfect_square(n):
+    sqrt = math.sqrt(n)
+    return sqrt.is_integer()
+
+def main():
+    n = int(input("Enter any integer : "))
+
+    if is_perfect_square(n):
+        print("Yes")
+    else:
+        print("No")
+
+if __name__ == "__main__":
+    main()
