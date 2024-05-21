@@ -1,0 +1,28 @@
+Write a program to accept the number of days the member is late to return the book and display the fine and/or the appropriate member cancellation message.
+def calculate_fine(days_late):
+    if days_late <= 0:
+        return 0
+    elif days_late <= 7:
+        return days_late * 0.5
+    elif days_late <= 14:
+        return 3.5 + (days_late - 7) * 1
+    elif days_late <= 21:
+        return 10.5 + (days_late - 14) * 2
+    else:
+        return 21 + (days_late - 21) * 3
+        
+def display_message(fine):
+    if fine > 25:
+        print("Your membership has been cancelled due to excessive fines.")
+    elif fine > 0:
+        print("Your fine is: $", round(fine, 2))
+    else:
+        print("No fine to be paid.")
+
+def main():
+    days_late = int(input("Enter the number of days the member is late to return the book: "))
+    fine = calculate_fine(days_late)
+    display_message(fine)
+
+if __name__ == "__main__":
+    main()
