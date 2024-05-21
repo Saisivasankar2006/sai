@@ -1,0 +1,36 @@
+Given time in hours, Write a program to find the time in minute at which
+ the minute hand and hour hand coincide in next one hour.
+
+ def coincide_time(hour):
+
+    hour_angle_per_minute = 360 / (12 * 60)
+
+
+    minute_angle_per_minute = 360 / 60
+
+  
+    hour_angle = (hour % 12) * 360 / 12
+    minute_angle = 0
+
+
+    for minute in range(60):
+      
+        hour_angle += hour_angle_per_minute
+        minute_angle += minute_angle_per_minute
+
+
+        if abs(hour_angle - minute_angle) < 1e-9:
+            return minute
+
+    
+    return None
+current_hour = int(input("Enter the current hour (in 24-hour format): "))
+
+
+coincide_minute = coincide_time(current_hour)
+
+
+if coincide_minute is not None:
+    print(f"The minute hand and hour hand coincide at {coincide_minute} minutes past the hour.")
+else:
+    print("The minute hand and hour hand do not coincide in the next hour.")
