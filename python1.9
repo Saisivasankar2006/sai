@@ -1,0 +1,62 @@
+Write a C program to implement a menu driven calculator to work with integers.
+Use the functions mentioned in the problem specification. 
+The choice of operations are as follows:
+1 – addition
+2 – subtraction
+3 – multiplication
+4 – division
+5 – modulus
+6 – average
+7 – power
+
+ def add(a, b):
+    return a + b
+
+def subtract(a, b):
+    return a - b
+
+def multiply(a, b):
+    return a * b
+
+def divide(a, b):
+    if b == 0:
+        return "Error: Division by zero is not allowed"
+    else:
+        return a / b
+
+def modulus(a, b):
+    if b == 0:
+        return "Error: Division by zero is not allowed"
+    else:
+        return a % b
+
+def average(a, b):
+    return (a + b) / 2
+
+def power(a, b):
+    return a ** b
+
+def main():
+    a, b = map(int, input("Enter two numbers : ").split())
+    option = int(input("Enter your option : "))
+
+    if option == 1:
+        print("Sum =", add(a, b))
+    elif option == 2:
+        print("Difference =", subtract(a, b))
+    elif option == 3:
+        print("Product =", multiply(a, b))
+    elif option == 4:
+        print("Quotient =", "{:.2f}".format(divide(a, b)))
+    elif option == 5:
+        print("Modulus =", modulus(a, b))
+    elif option == 6:
+        print("Average =", "{:.2f}".format(average(a, b)))
+    elif option == 7:
+        print("Power =", power(a, b))
+    else:
+        print("Invalid option")
+
+if __name__ == "__main__":
+    main()
+
